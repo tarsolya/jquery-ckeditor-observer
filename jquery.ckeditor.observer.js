@@ -29,7 +29,7 @@ $.fn.observe = function(seconds, callback){
 		});
 
 		setInterval(function(){
-			if(CKEDITOR) {
+			if(typeof(CKEDITOR) !== "undefined") {
 				for(var instanceName in CKEDITOR.instances) {
 					if(CKEDITOR.instances[instanceName].checkDirty()) {
 						$('textarea#' + instanceName).val(CKEDITOR.instances[instanceName].getData());
